@@ -1,0 +1,89 @@
+<html>
+  <body>
+    <h1>Function</h1>
+    <p>This demonstrates a regular function, NOT an arrow function.</p>
+    <p id="demo"></p>
+
+    <h1>Arrow Function</h1>
+    <p>A demonstration of a simple arrow function.</p>
+    <p id="demoka"></p>
+
+    <h1>Arrow Function</h1>
+    <h2>Implicit Return</h2>
+    <p>The arrow function expects a return value, and returns the value by default, without the <strong>return</strong> keyword.</p>
+    <p id="demoyo"></p>
+
+    <h1>Arrow Function</h1>
+    <p>A demonstration of an arrow function in one line, with parameters.</p>
+    <p id="demota"></p>
+
+    <h1>Arrow Function</h1>
+    <p>As you can see in this example, you can skip the parentheses when you have only one parameter.</p>
+    <p id="demoyu"></p>
+
+    <h1>Regular Function</h1>
+    <p>The <strong>this</strong> keyword represents different objects depending on how the function was called.</p>
+    <button id="btn1">Click Me!</button>
+    <p><strong>this</strong> represents:</p>
+    <p id="demowa"></p>
+    <p>See the difference before and after the button is clicked.</p>
+
+    <h1>Arrow Function</h1>
+    <p>The <strong>this</strong> keyword represents the Header object.</p>
+    <button id="btn2">Click Me!</button>
+    <p><strong>this</strong> represents:</p>
+    <p id="demore"></p>
+
+    <script>
+      // Regular function
+      let hello = function() {
+        return "Hello World!";
+      }
+      document.getElementById("demo").innerHTML = hello();
+
+      // Arrow function
+      hello = () => {
+        return "Hello World!";
+      }
+      document.getElementById("demoka").innerHTML = hello();
+
+      // Arrow function with implicit return
+      hello = () => "Hello World!";
+      document.getElementById("demoyo").innerHTML = hello();
+
+      // Arrow function with parameter
+      hello = (val) => "Hello " + val;
+      document.getElementById("demota").innerHTML = hello("World");
+
+      // Arrow function with single parameter (no parentheses)
+      hello = val => "Hello " + val;
+      document.getElementById("demoyu").innerHTML = hello("World");
+
+      // Regular function and 'this'
+      class Header1 {
+        constructor() {
+          this.color = "Red";
+        }
+        changeColor = function() {
+          document.getElementById("demowa").innerHTML += this;
+        }
+      }
+      const myheader1 = new Header1();
+      window.addEventListener("load", myheader1.changeColor);
+      document.getElementById("btn1").addEventListener("click", myheader1.changeColor);
+
+      // Arrow function and 'this'
+      class Header2 {
+        constructor() {
+          this.color = "Red";
+        }
+        changeColor = () => {
+          document.getElementById("demore").innerHTML += this;
+        }
+      }
+      const myheader2 = new Header2();
+      window.addEventListener("load", myheader2.changeColor);
+      document.getElementById("btn2").addEventListener("click", myheader2.changeColor);
+    </script>
+  </body>
+</html>

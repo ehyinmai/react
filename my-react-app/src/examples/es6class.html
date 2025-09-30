@@ -1,0 +1,23 @@
+<html>
+
+<body>
+    <div id="brand"></div>
+    <div id="present"></div>
+    <script>
+      class Car {
+        constructor(name) {
+          this.brand = name;
+        }
+        present() {
+          return 'I have a ' + this.brand;
+        }
+      }
+
+      const myCar = new Car("Ford");
+      document.getElementById("brand").innerText = myCar.brand;
+      document.getElementById("present").innerText = myCar.present();
+    </script>
+</body>
+</html>
+
+
