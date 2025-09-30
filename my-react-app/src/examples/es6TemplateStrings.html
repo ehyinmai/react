@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    <h1>Example</h1>
+
+<p>Without using template strings:</p>
+<div id="demo"></div>
+
+<script>
+const name = "John";
+const age = 30;
+const message = "Hello, " + name + "!\n" + 
+"You are " + age + " years old.";
+
+document.getElementById("demo").innerHTML = message;
+</script>
+    
+
+<h1>Example</h1>
+<p>With template strings you can write strings that span multiple lines and include embedded expressions:</p>
+<div id="demo1"></div>
+
+<script>
+const name1 = "John";
+const age1 = 30;
+const message1 = `Hello, ${name1}!
+You are ${age1} years old.`;
+
+document.getElementById("demo1").innerHTML = message1;
+
+</script>
+</body>
+</html>

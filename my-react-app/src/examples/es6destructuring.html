@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    <p id = "demo"></p>
+
+<script>
+    const vehicles = ['mustang', 'f-150', 'expedition'];
+
+    //old way
+    const car = vehicles[0];
+    const truck = vehicles[1];
+    const suv = vehicles[2];
+
+    document.getElementById('demo').innerHTML = truck;
+</script>
+    
+
+<p id= "demon"></p>
+
+<script>
+    const vehicle = ['mustang', 'f-150', 'expedition'];
+    const [car1, truck1, suv1] = vehicles;
+
+    document.getElementById('demon').innerHTML = truck1;
+</script>
+
+<p id = "demony"></p>
+
+<script>
+    function dateInfo(dat) {
+    const d = dat.getDate();
+    const m = dat.getMonth();
+    const y = dat.getFullYear();
+
+    return [d, m, y];
+    }
+
+    const [date, month, year] = dateInfo(new Date());
+    document.getElementById('demony').innerHTML = "The year is " + year;
+</script>
+
+<p id = "demonyo"></p>
+
+<script>
+    const person = {
+        firstName: "John",
+        lastName: "Doe",
+        age: 50
+    };
+
+    let {firstName, lastName, age} = person;
+    document.getElementById("demonyo").innerHTML = firstName;
+</script>
+
+
+<p id="demonl"></p>
+  
+<script>
+const ferson = {
+  Firstname: "John",
+  Lastname: "Doe",
+  Age: 50
+};
+
+let {Firstname, Lastname, Age} = ferson;
+document.getElementById("demonl").innerHTML = Firstname;
+</script>
+
+
+<p id="demonly"></p>
+  
+<script>
+const Person1 = {
+  FirstName1: "John",
+  LastName1: "Doe",
+  AGE: 50
+};
+
+let {FirstName1} = Person1;
+document.getElementById("demonly").innerHTML = FirstName1;
+</script>
+
+
+<p id="demo1"></p>
+  
+<script>
+const person1 = {
+  firstName1: "John",
+  lastName1: "Doe",
+  age1: 50
+};
+
+let {firstName1, lastName1, age1, country = "Norway"} = person1;
+document.getElementById("demo1").innerHTML = country;
+</script>
+
+
+<p id="demo2"></p>
+  
+<script>
+const person2 = {
+  firstName2: "John",
+  lastName2: "Doe",
+  age2: 50,
+  car2: {
+    brand: 'Ford',
+    model: 'Mustang',
+  }
+};
+
+let {firstName2, car2: { brand, model }} = person2;
+let message = `My name is ${firstName2}, and I drive a ${brand} ${model}.`;
+document.getElementById("demo2").innerHTML = message;
+</script>
+
+
+</body>
+</html>
